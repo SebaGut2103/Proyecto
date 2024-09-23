@@ -9,7 +9,7 @@ def encryptContra (contra):
     #Esta linea encripta la contraseña usando SHA256.
     return hashlib.sha256(contra.encode()).hexdigest()
 
-def guardarContra(encryptContra):
+def guardarContra(contra):
 
     with open('UTIS\contra_archivo.json' ,'w') as fd:
         json.dump(encryptContra,fd)
@@ -18,7 +18,7 @@ def guardarContra(encryptContra):
 
 def cargarContra():
     #Carga las contraseñas encriptadas
-    if os.path.exist(contra_archivo):
+    if os.path.join(contra_archivo):
         with open('UTIS\contra_archivo.json', 'r') as fd:
             return fd.read().strip()
 
@@ -27,6 +27,6 @@ def cargarContra():
 def cambiarContra():
     
     nuevo_contra = input ('Ingrese una nueva contraseña:\n')
-    encryptContra = encryptContra(nuevo_contra)
+    encryptContra = contraseñaEncript(nuevo_contra)
     guardarContra(encryptContra)
     print('Cambio de contraseña exitosa.')
