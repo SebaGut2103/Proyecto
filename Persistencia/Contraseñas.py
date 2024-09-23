@@ -18,15 +18,15 @@ def guardarContra(contra):
 
 def cargarContra():
     #Carga las contraseñas encriptadas
-    if os.path.join(contra_archivo):
+    if os.path.exists(contra_archivo):
         with open('UTIS\contra_archivo.json', 'r') as fd:
-            return fd.read().strip()
+            return json.load(fd)
 
     return None
     
 def cambiarContra():
     
     nuevo_contra = input ('Ingrese una nueva contraseña:\n')
-    encryptContra = contraseñaEncript(nuevo_contra)
-    guardarContra(encryptContra)
+    encryptContra = encryptContra(nuevo_contra)
+    guardarContra (encryptContra)
     print('Cambio de contraseña exitosa.')
