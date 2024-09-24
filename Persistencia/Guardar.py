@@ -1,7 +1,7 @@
 from pathlib import Path
 import json
 def guardar(grup, arch):
-    with open( arch'w') as fd:
+    with open(arch,'w') as fd:
         json.dump(grup, fd)
     if not fd.closed():
         fd.close

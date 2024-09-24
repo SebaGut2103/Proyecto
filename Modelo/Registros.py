@@ -1,5 +1,5 @@
 import json
-import Persistencia.Guardar import guardar 
+from Persistencia.Guardar import guardar 
 from Interfaz.Menu import menu
 # Función para registrar módulos
 def modulo(grup, arch):
@@ -17,7 +17,7 @@ def modulo(grup, arch):
         grup[codigo] = modulo
 
         grup = dict(sorted(grup.items()))
-        guardar(grup, arch)
+    guardar(grup, arch)
 
 def leerCodigo():
         while True:
@@ -128,7 +128,20 @@ def leerCedula():
         try:
             cedula = input('Cedula del docente: ')
             if len(cedula.strip()) == 0:
-                
+                print('>ERROR. Al ingresar la cedula')
+                continue
+        except Exception as e:
+            print('ERROR Al ingresar la cedula.\n' + e)
+
+def leerNomb():
+    while True:
+        try:
+            nombre = input('Nombre del docente: ')
+            if len(nombre.strip()) == 0:
+                print('>>>ERROR. Al ingresar nombre')
+        except Exception as e:
+            print('ERROR al Ingresar nombre\n' + e)
+ 
 # Función para listar estudiantes
 def consultarEstudiantes():
     try:

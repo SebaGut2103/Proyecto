@@ -1,12 +1,28 @@
-from Modelo.contrasena import encryptContra
-
-archivo = 'datos\contra_archivo.json'
-
-
-def sesion(): 
-    usuario = input('Ingrese su nombre de usuario:\n ')
+from Modelo.Registros import modulo, registrarEstudiante, registroDocentes,consultaDocentes, consultaModulos, consultarEstudiantes
+from Interfaz.Menu import menu
+#SoftWare dedef main():
+def main():
     while True:
-        contra= input('Ingrese contraseña:\n')
-        mostrar = encryptContra(contra)
-        print (mostrar)    
-sesion()
+            menu()
+            opcion = input('Seleccione una opción: ')
+
+            if opcion == 'a':
+                modulo()
+            elif opcion == 'b':
+                registrarEstudiante()
+            elif opcion == 'c':
+                registroDocentes()
+            elif opcion == 'd':
+                consultarEstudiantes()
+            elif opcion == 'e':
+                consultaModulos()
+            elif opcion == 'f':
+                consultaDocentes()
+            elif opcion == 'g':
+                print('Gracias por usar el software...')
+                break
+            else:
+                print('>>>ERROR.Opción inválida. Intente de nuevo.')
+
+if __name__ == '__main__':
+    main()
