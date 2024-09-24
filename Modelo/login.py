@@ -1,19 +1,24 @@
-from Modelo.contrasena import encryptContra, insertarContra,guardarContra, cargarContra
+from contrasena import encryptContra
+from Persistencia.Contrasenas import guardarContra,cargarContra, none
 
-contra = {}
-archivo = 'usuario.json'
-contra = cargarContra(archivo)
 
-def sesion(): 
-    usuario = input('Ingresa nombre de usuario:\n')    
-    while True:
-        
-        contra = input('Ingresa contraseña:\n')
-        if encryptContra(contra) == contra(archivo):
+def iniciarSesion(): 
+    archivo = 'usuario.json'
+    contra = cargarContra(archivo)
+    if contra is none:
+        contra = {
+           
+           'usuario': input('Ingresa nombre de usuario:\n'),
+           'contrasena': encryptContra = ('SISGESA')
+        }
 
-            print('>>>Ingresando con exito')
-            break
-        else:
-            print('>>>Contraseña incorrecta')
-        return contra
-sesion()
+        guardarContra(archivo,contra)
+    else:
+        usuario = input('Ingresa nombre de usuario:\n')
+        contrasena = input('Ingresa contraseña:\n')
+    if (contra["usuario"] == usuario and
+        contra["contrasena"] == encryptContra(contrasena)):
+        print('>>>Ingreso exitoso')
+    else:
+        print('>>>Contraseña incorrecta')
+iniciarSesion()

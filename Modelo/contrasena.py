@@ -1,5 +1,5 @@
 
-from Persistencia.Contrasenasks import guardarContra, cargarContra 
+from Persistencia.Contrasenas import guardarContra
 
 import hashlib
 

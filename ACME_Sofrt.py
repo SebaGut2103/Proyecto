@@ -1,8 +1,6 @@
 from Modelo.Registros import modulo, registrarEstudiante, registroDocentes,consultaDocentes, consultaModulos, consultarEstudiantes
 from Interfaz.Menu import menu
 
-
-
 def main():
     while True:
             menu()

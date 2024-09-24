@@ -1,6 +1,5 @@
 import json
 from Persistencia.Guardar import guardar 
-from Interfaz.Menu import menu
 
 # Función para registrar módulos
 def modulo(grup, arch):
@@ -152,8 +151,11 @@ def consultarEstudiantes():
                 print('No hay estudiantes registrados.')
             else:
                 for estudiante in estudiantes:
-                    print(f'Código:{estudiante["cod"]},
-                           Nombre: {estudiante["nombre"]}, Sexo: {estudiante["sexo"]}, Edad: {estudiante["edad"]}')
+                    print(f'Código:{estudiante["cod"]}')
+                    print(f'Nombre: {estudiante["nombre"]}') 
+                    print(f'Sexo: {estudiante["sexo"]}')
+                    print(f' Edad: {estudiante["edad"]}')
+                    
     except FileNotFoundError:
         print('No hay estudiantes registrados.')
 
@@ -181,6 +183,7 @@ def consultaDocentes():
                 print('No hay docentes registrados.')
             else:
                 for docente in docentes:
-                    print(f'Cédula: {docente["cedula"]}, Nombre: {docente["nombre"]}')
+                    print(f'Cédula: {docente["cedula"]}')
+                    print(f'Nombre: {docente["nombre"]}')
     except FileNotFoundError:
         print('No hay docentes registrados.')
