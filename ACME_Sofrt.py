@@ -1,6 +1,8 @@
 from Modelo.Registros import modulo, registrarEstudiante, registroDocentes,consultaDocentes, consultaModulos, consultarEstudiantes
 from Interfaz.Menu import menu
-#SoftWare dedef main():
+
+
+
 def main():
     while True:
             menu()

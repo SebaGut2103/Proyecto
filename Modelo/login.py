@@ -1,6 +1,8 @@
 from Modelo.contrasena import encryptContra, insertarContra,guardarContra, cargarContra
-archivo = 'datos\usuarios.json'
 
+contra = {}
+archivo = 'datos\usuarios.json'
+contra = cargarContra(archivo)
 
 def sesion(): 
     usuario = input('Ingresa nombre de usuario:\n')

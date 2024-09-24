@@ -1,6 +1,7 @@
 import json
 from Persistencia.Guardar import guardar 
 from Interfaz.Menu import menu
+
 # Función para registrar módulos
 def modulo(grup, arch):
     codigo = leerCodigo
@@ -145,35 +146,36 @@ def leerNomb():
 # Función para listar estudiantes
 def consultarEstudiantes():
     try:
-        with open('UTIS/estudiantes.json', 'r') as archivo:
+        with open('datos\sistema.json', 'r') as archivo:
             estudiantes = json.load(archivo)
             if not estudiantes:
                 print('No hay estudiantes registrados.')
             else:
                 for estudiante in estudiantes:
-                    print(f'Código: {estudiante["codigo"]}, Nombre: {estudiante["nombre"]}, Sexo: {estudiante["sexo"]}, 
-                          Edad: {estudiante["edad"]}')
+                    print(f'Código:{estudiante["cod"]},
+                           Nombre: {estudiante["nombre"]}, Sexo: {estudiante["sexo"]}, Edad: {estudiante["edad"]}')
     except FileNotFoundError:
         print('No hay estudiantes registrados.')
 
 # Función para listar módulos
 def consultaModulos():
     try:
-        with open('UTIS/modulos.json', 'r') as archivo:
+        with open('datos/sistema.json', 'r') as archivo:
             modulos = json.load(archivo)
             if not modulos:
                 print('No hay módulos registrados.')
             else:
                 for modulo in modulos:
-                    print(f'Código: {modulo["codigo"]}, Nombre: {modulo["nombre"]}, 
-                          Duración: {modulo["duracion"]} semanas')
+                    print(f'Código: {modulo["codigo"]}')
+                    print(f'Nombre: {modulo["nombre"]}')
+                    print(f'Duración: {modulo["duracion"]} de semanas')
     except FileNotFoundError:
         print('No hay módulos registrados.')
 
 # Función para listar docentes
 def consultaDocentes():
     try:
-        with open('UTIS/docentes.json', 'r') as archivo:
+        with open('datos\sistema.json', 'r') as archivo:
             docentes = json.load(archivo)
             if not docentes:
                 print('No hay docentes registrados.')
