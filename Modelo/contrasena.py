@@ -9,9 +9,12 @@ def cambiarContra():
     
     nuevo_contra = input ('Ingrese una nueva contraseña:\n')
     encryptContra = encryptContra(nuevo_contra)
-    guardarContra (encryptContra)
+    guardarContra(encryptContra)
     print('Cambio de contraseña exitosa.')
 
 
 def insertarContra():
-    
+    contra = input('Ingresa Contraseña: ')
+    if encryptContra(contra):
+        print('>>>Contraseña guardada correctamente')    
+    guardarContra(contra)

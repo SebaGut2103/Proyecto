@@ -1,27 +1,28 @@
-#SoftWare de ACME 
-from PROYECTO.Sesion import sesion
+from Modelo.Registros import modulo, registrarEstudiante, registroDocentes,consultaDocentes, consultaModulos, consultarEstudiantes
 from Interfaz.Menu import menu
-from Persistencia.Guardar import cargar
-from Modelo.Registros import  insertarGrupo,modulo,insertarEstud,registroDocentes, registroAsis
+#SoftWare dedef main():
+def main():
+    while True:
+            menu()
+            opcion = input('Seleccione una opción: ')
 
-registro = {}
+            if opcion == 'a':
+                modulo()
+            elif opcion == 'b':
+                registrarEstudiante()
+            elif opcion == 'c':
+                registroDocentes()
+            elif opcion == 'd':
+                consultarEstudiantes()
+            elif opcion == 'e':
+                consultaModulos()
+            elif opcion == 'f':
+                consultaDocentes()
+            elif opcion == 'g':
+                print('Gracias por usar el software...')
+                break
+            else:
+                print('>>>ERROR.Opción inválida. Intente de nuevo.')
 
-archivo = 'PROYECTO\UTIS\Resgistro.json'
-
-registro = cargar(archivo)
-
-while True:
-    op = menu()
-    match op:
-        case 'a':
-            registro = insertarGrupo(registro,archivo)
-        case 'b':
-            registro = modulo(registro,archivo)
-        case 'c':
-            registro = insertarEstud(registro,archivo)
-        case 'd':
-            registro = registroDocentes(registro,archivo)
-        case 'e':
-            registro = registroAsis(registro,archivo)
-        case 'f':      
-            
+if __name__ == '__main__':
+    main()
