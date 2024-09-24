@@ -1,20 +1,15 @@
 from Modelo.contrasena import encryptContra, insertarContra,guardarContra, cargarContra
 
 contra = {}
-archivo = 'datos\usuarios.json'
+archivo = 'usuario.json'
 contra = cargarContra(archivo)
 
 def sesion(): 
-    usuario = input('Ingresa nombre de usuario:\n')
-    guardarContra = cargarContra(usuario)
-    if guardarContra is None:
-        print('>>>Usuario no encontrado')
-        return
-     
+    usuario = input('Ingresa nombre de usuario:\n')    
     while True:
         
         contra = input('Ingresa contraseña:\n')
-        if encryptContra(contra) == guardarContra:
+        if encryptContra(contra) == contra(archivo):
 
             print('>>>Ingresando con exito')
             break
