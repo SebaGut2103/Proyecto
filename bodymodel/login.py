@@ -1,5 +1,4 @@
-from contrasena import encryptContra
-from Persistencia.Contrasenas import guardarContra,cargarContra, none
+from Persistencia.Contrasenas import guardarContra,cargarContra, encryptContra, none
 
 
 def iniciarSesion(): 
@@ -9,13 +8,13 @@ def iniciarSesion():
         contra = {
            
            'usuario': input('Ingresa nombre de usuario:\n'),
-           'contrasena': encryptContra = ('SISGESA')
+           'contrasena': encryptContra ('SISGESA')
         }
 
         guardarContra(archivo,contra)
     else:
         usuario = input('Ingresa nombre de usuario:\n')
-        contrasena = input('Ingresa contraseña:\n')
+        contrasena = input('Ingresa contraseña:\n')    
     if (contra["usuario"] == usuario and
         contra["contrasena"] == encryptContra(contrasena)):
         print('>>>Ingreso exitoso')

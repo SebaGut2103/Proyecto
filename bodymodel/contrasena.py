@@ -1,12 +1,4 @@
-
-from Persistencia.Contrasenas import guardarContra
-
-import hashlib
-
-
-def encryptContra(contra):
-    #Esta linea encripta la contraseña usando SHA256.
-    return hashlib.sha256(contra.encode()).hexdigest() 
+from Persistencia.Contrasenas import guardarContra, encryptContra
 
 def cambiarContra(archivo):
     

@@ -1,20 +1,20 @@
-from Modelo.contrasena import encryptContra
+import hashlib
 import json
 import os
 
-archivo = 'datos\usuarios.json'
-
-def guardarContra(contra):
-
-    with open('datos\usuarios.json' ,'w') as fd:
-        json.dump(encryptContra,fd)
-    if not fd.closed():
-        fd.close
+def encryptContra(contra):
+    return hashlib.sha256(contra.encode()).hexdigest
 
 def cargarContra():
-    #Carga las contraseñas encriptadas
-    if os.path.exists(archivo):
-        with open('datos\usuarios.json', 'r') as fd:
-            return json.load(fd)
-
-    return None
+    if not os.path.exists('datos\\usuario.json'):
+        guardarContra('SISGESA')
+        return 'SISGESA'
+    
+    with open('datos\usuario.json', 'r') as fd:
+        dato = json.load(fd)
+        return dato['contraseña']
+    
+def guardarContra(contra):
+    with open('datos\\usuario.json', 'w') as fd:
+        json.dump({'contraseña': encryptContra(contra)}, fd)
+        

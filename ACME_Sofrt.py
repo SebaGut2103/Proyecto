@@ -1,5 +1,5 @@
-from Modelo.Registros import modulo, registrarEstudiante, registroDocentes,consultaDocentes, consultaModulos, consultarEstudiantes
-from Interfaz.Menu import menu
+from bodymodel.Registros import modulo, registrarEstudiante, registroDocentes,consultaDocentes, consultaModulos, consultarEstudiantes
+from Interfaz.menu import menu
 
 def main():
     while True:
