@@ -1,7 +1,9 @@
 from Persistencia.Contrasenas import guardarContra,cargarContra, encryptContra, none
 
 
-def iniciarSesion(): 
+
+def iniciarSesion():
+    print('>>> ACME.SOFT <<<') 
     archivo = 'usuario.json'
     contra = cargarContra(archivo)
     if contra is none:

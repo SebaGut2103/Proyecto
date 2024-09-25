@@ -1,10 +1,12 @@
 from bodymodel.Registros import modulo, registrarEstudiante, registroDocentes,consultaDocentes, consultaModulos, consultarEstudiantes
-from Interfaz.menu import menu
 
+from bodymodel.login import iniciarSesion
+from Interfaz.Menu import menu
 def main():
     while True:
             menu()
-            opcion = input('Seleccione una opción: ')
+            print('>>> BIENVENIDO A ACEM.SOFT <<<')
+            opcion = input('*Seleccione una opción: ')
 
             if opcion == 'a':
                 modulo()
@@ -19,10 +21,9 @@ def main():
             elif opcion == 'f':
                 consultaDocentes()
             elif opcion == 'g':
-                print('Gracias por usar el software...')
+                print('>>>Gracias por usar el software<<<')
                 break
             else:
                 print('>>>ERROR.Opción inválida. Intente de nuevo.')
 
-if __name__ == '__main__':
-    main()
+iniciarSesion()

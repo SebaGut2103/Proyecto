@@ -23,3 +23,6 @@ def cargar (arch):
         input('>>>Presione cualquier tecla para continuar...')
 
     return grup
+
+def main():
+    print('hi')
